@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mega Quality Laboratory — Soil &amp; Building Materials Testing, Dubai</title>
+<meta name="description" content="EIAC-accredited, ISO/IEC 17025:2017 soil, concrete, steel and building materials testing laboratory in Dubai, UAE.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --bg-0:#FFFFFF;
+  --bg-1:#F8FAFC;
+  --bg-2:#EEF4FF;
+  --ink:#0B1220;
+  --ink-soft:#4A5568;
+  --ink-faint:#8593A8;
+  --blue:#2563EB;
+  --indigo:#4F46E5;
+  --cyan:#06B6D4;
+  --line: rgba(15,23,42,0.09);
+  --glass: rgba(255,255,255,0.62);
+  --glass-strong: rgba(255,255,255,0.82);
+  --shadow-sm: 0 1px 2px rgba(15,23,42,.06), 0 1px 1px rgba(15,23,42,.04);
+  --shadow-md: 0 12px 32px -12px rgba(30,41,88,.18);
+  --shadow-lg: 0 30px 70px -20px rgba(30,41,88,.28);
+  --radius: 24px;
+  --ease: cubic-bezier(.16,.84,.44,1);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important;}
+}
+body{
+  margin:0;
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  color:var(--ink);
+  background:var(--bg-0);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif; margin:0; letter-spacing:-0.02em; font-weight:600;}
+p{margin:0; color:var(--ink-soft); line-height:1.65;}
+a{color:inherit; text-decoration:none;}
+img,svg{display:block; max-width:100%;}
+.mono{font-family:'IBM Plex Mono',monospace; letter-spacing:.02em;}
+.wrap{max-width:1240px; margin:0 auto; padding:0 32px;}
+section{position:relative;}
+::selection{background:var(--indigo); color:#fff;}
+
+/* focus visibility */
+a:focus-visible, button:focus-visible{outline:2px solid var(--blue); outline-offset:3px; border-radius:6px;}
+
+/* ============ CURSOR GLOW ============ */
+#cursor-glow{
+  position:fixed; top:0; left:0; width:520px; height:520px; border-radius:50%;
+  background:radial-gradient(circle, rgba(37,99,235,.10), rgba(6,182,212,.06) 45%, transparent 70%);
+  pointer-events:none; transform:translate(-50%,-50%); z-index:2; will-change:transform; opacity:0; transition:opacity .4s;
+}
+@media (hover:hover){ #cursor-glow{opacity:1;} }
+
+/* ============ SCROLL PROGRESS ============ */
+#progress{position:fixed; top:0; left:0; height:3px; width:0%; background:linear-gradient(90deg,var(--blue),var(--indigo),var(--cyan)); z-index:999; transition:width .08s linear;}
+
+/* ============ NAVBAR ============ */
+header.nav{
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  padding:18px 0;
+  transition:all .4s var(--ease);
+}
+header.nav .inner{
+  max-width:1240px; margin:0 auto; padding:0 32px;
+  display:flex; align-items:center; justify-content:space-between;
+  background:transparent; border-radius:100px; transition:all .4s var(--ease);
+}
+header.nav.scrolled{padding:10px 0;}
+header.nav.scrolled .inner{
+  background:var(--glass-strong);
+  backdrop-filter:blur(20px) saturate(160%);
+  -webkit-backdrop-filter:blur(20px) saturate(160%);
+  box-shadow:var(--shadow-sm), 0 0 0 1px var(--line);
+  padding:8px 20px;
+  max-width:1100px;
+}
+.logo{display:flex; align-items:center; gap:10px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16.5px;}
+.logo .mark{width:34px; height:34px; border-radius:9px; background:linear-gradient(135deg,var(--blue),var(--indigo) 60%,var(--cyan)); position:relative; flex-shrink:0;}
+.logo .mark svg{position:absolute; inset:0; margin:auto;}
+.logo small{display:block; font-family:'Inter'; font-weight:500; font-size:10px; letter-spacing:.08em; color:var(--ink-faint); text-transform:uppercase; margin-top:1px;}
+nav.links{display:flex; gap:30px; font-size:14.5px; font-weight:500;}
+nav.links a{color:var(--ink-soft); position:relative; padding:4px 0;}
+nav.links a::after{content:'';position:absolute; left:0; bottom:0; width:0; height:1.5px; background:var(--blue); transition:width .3s var(--ease);}
+nav.links a:hover{color:var(--ink);}
+nav.links a:hover::after{width:100%;}
+.nav-cta{display:flex; align-items:center; gap:16px;}
+
+/* magnetic btn */
+.btn{
+  position:relative; display:inline-flex; align-items:center; gap:8px;
+  padding:12px 22px; border-radius:100px; font-weight:600; font-size:14.5px;
+  cursor:pointer; border:none; transition:transform .25s var(--ease), box-shadow .25s var(--ease);
+  font-family:'Inter';
+}
+.btn-primary{background:linear-gradient(135deg,var(--blue),var(--indigo)); color:#fff; box-shadow:0 8px 24px -8px rgba(37,99,235,.55);}
+.btn-primary:hover{box-shadow:0 12px 32px -6px rgba(37,99,235,.7); transform:translateY(-2px);}
+.btn-ghost{background:var(--glass); border:1px solid var(--line); color:var(--ink); backdrop-filter:blur(10px);}
+.btn-ghost:hover{background:#fff; transform:translateY(-2px); box-shadow:var(--shadow-sm);}
+.btn-sm{padding:10px 18px; font-size:13.5px;}
+
+/* ============ HERO ============ */
+.hero{
+  min-height:100vh; display:flex; align-items:center; position:relative; overflow:hidden;
+  padding:150px 0 90px;
+  background:
+    radial-gradient(1100px 620px at 82% -8%, #DCEBFF 0%, transparent 60%),
+    radial-gradient(900px 560px at 8% 108%, #E7E5FF 0%, transparent 60%),
+    var(--bg-0);
+}
+.mesh-blob{position:absolute; border-radius:50%; filter:blur(80px); opacity:.55; z-index:0; will-change:transform;}
+.b1{width:520px; height:520px; background:radial-gradient(circle, var(--blue), transparent 70%); top:-140px; right:-100px; animation:float1 16s ease-in-out infinite;}
+.b2{width:420px; height:420px; background:radial-gradient(circle, var(--cyan), transparent 70%); bottom:-120px; left:-80px; animation:float2 20s ease-in-out infinite;}
+.b3{width:340px; height:340px; background:radial-gradient(circle, var(--indigo), transparent 70%); top:40%; left:38%; opacity:.28; animation:float1 24s ease-in-out infinite reverse;}
+@keyframes float1{0%,100%{transform:translate(0,0);}50%{transform:translate(-40px,50px);}}
+@keyframes float2{0%,100%{transform:translate(0,0);}50%{transform:translate(50px,-40px);}}
+
+.grid-overlay{
+  position:absolute; inset:0; z-index:0; opacity:.5;
+  background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(ellipse 70% 60% at 50% 30%, black 10%, transparent 75%);
+}
+.particle{position:absolute; border-radius:50%; background:var(--blue); opacity:.35; z-index:0; pointer-events:none;}
+
+.hero-grid{position:relative; z-index:2; display:grid; grid-template-columns:1.05fr .95fr; gap:60px; align-items:center;}
+.eyebrow{
+  display:inline-flex; align-items:center; gap:8px; padding:7px 14px 7px 8px; border-radius:100px;
+  background:var(--glass); border:1px solid var(--line); backdrop-filter:blur(10px);
+  font-size:12.5px; font-weight:600; color:var(--indigo); margin-bottom:22px;
+}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%; background:var(--cyan); box-shadow:0 0 0 3px rgba(6,182,212,.18); animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+
+.hero h1{font-size:clamp(38px,5.4vw,64px); line-height:1.04; font-weight:700;}
+.hero h1 .reveal{display:block; overflow:hidden;}
+.hero h1 .reveal span{display:inline-block; transform:translateY(115%); animation:riseIn .9s var(--ease) forwards; animation-delay:calc(var(--i) * .09s);}
+@keyframes riseIn{to{transform:translateY(0);}}
+.hero h1 .grad{background:linear-gradient(100deg,var(--blue),var(--indigo) 45%, var(--cyan)); -webkit-background-clip:text; background-clip:text; color:transparent;}
+.hero p.lead{margin-top:22px; font-size:18px; max-width:480px; opacity:0; animation:fadeUp .8s var(--ease) forwards; animation-delay:.65s;}
+.hero .cta-row{display:flex; gap:14px; margin-top:34px; opacity:0; animation:fadeUp .8s var(--ease) forwards; animation-delay:.8s;}
+@keyframes fadeUp{from{opacity:0; transform:translateY(16px);} to{opacity:1; transform:translateY(0);}}
+
+.hero .badges{display:flex; gap:22px; margin-top:44px; opacity:0; animation:fadeUp .8s var(--ease) forwards; animation-delay:.95s;}
+.hero .badges .b{font-size:12.5px; color:var(--ink-faint); display:flex; align-items:center; gap:8px;}
+.hero .badges .b b{color:var(--ink); font-family:'IBM Plex Mono'; font-weight:600; display:block; font-size:15px;}
+
+/* hero visual: lab readout panel */
+.hero-visual{position:relative; height:520px;}
+.readout{
+  position:absolute; inset:0; margin:auto; width:100%; max-width:420px; height:440px;
+  background:var(--glass-strong); border:1px solid var(--line); border-radius:28px;
+  backdrop-filter:blur(22px) saturate(160%); box-shadow:var(--shadow-lg);
+  padding:26px; opacity:0; animation:panelIn 1s var(--ease) forwards; animation-delay:.5s;
+}
+@keyframes panelIn{from{opacity:0; transform:translateY(30px) scale(.96);} to{opacity:1; transform:translateY(0) scale(1);}}
+.readout-head{display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:18px;}
+.readout-head .t1{font-size:11px; text-transform:uppercase; letter-spacing:.09em; color:var(--ink-faint); font-weight:600;}
+.readout-head .t2{font-size:14px; font-weight:600; margin-top:4px;}
+.live-tag{display:flex; align-items:center; gap:6px; font-size:11px; color:var(--cyan); font-weight:600;}
+.live-tag i{width:6px; height:6px; border-radius:50%; background:var(--cyan); animation:pulse 1.4s infinite;}
+.readout-chart{height:190px; position:relative; margin:14px 0 8px;}
+.readout-chart svg{width:100%; height:100%;}
+.chart-line{fill:none; stroke:url(#lineGrad); stroke-width:2.5; stroke-linecap:round; stroke-dasharray:600; stroke-dashoffset:600; animation:draw 3.6s var(--ease) forwards infinite;}
+.chart-fill{fill:url(#fillGrad); opacity:0; animation:fillFade 3.6s var(--ease) forwards infinite;}
+@keyframes draw{0%{stroke-dashoffset:600;} 55%{stroke-dashoffset:0;} 85%{stroke-dashoffset:0;} 100%{stroke-dashoffset:0; opacity:0;}}
+@keyframes fillFade{0%{opacity:0;} 55%{opacity:1;} 85%{opacity:1;} 100%{opacity:0;}}
+.readout-metrics{display:flex; justify-content:space-between; border-top:1px solid var(--line); padding-top:16px; margin-top:6px;}
+.metric .m-label{font-size:10.5px; color:var(--ink-faint); text-transform:uppercase; letter-spacing:.07em;}
+.metric .m-val{font-family:'IBM Plex Mono'; font-size:19px; font-weight:600; margin-top:3px;}
+.metric .m-val.accent{color:var(--indigo);}
+
+.float-card{
+  position:absolute; background:var(--glass-strong); border:1px solid var(--line);
+  border-radius:16px; padding:12px 16px; backdrop-filter:blur(16px); box-shadow:var(--shadow-md);
+  font-size:12.5px; font-weight:600; display:flex; align-items:center; gap:9px;
+  animation:bob 5s ease-in-out infinite;
+}
+.float-card svg{flex-shrink:0;}
+.fc1{top:6%; left:-6%; animation-delay:0s;}
+.fc2{bottom:10%; right:-8%; animation-delay:1.2s;}
+.fc3{top:48%; right:-12%; animation-delay:2.4s; padding:10px 14px;}
+@keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+
+.scroll-cue{position:absolute; bottom:36px; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:8px; z-index:2; opacity:.6;}
+.scroll-cue .line{width:1px; height:34px; background:linear-gradient(var(--ink-faint), transparent); animation:scrollcue 2s infinite;}
+@keyframes scrollcue{0%{transform:scaleY(0); transform-origin:top;}50%{transform:scaleY(1); transform-origin:top;}51%{transform-origin:bottom;}100%{transform:scaleY(0); transform-origin:bottom;}}
+.scroll-cue span{font-size:10.5px; letter-spacing:.1em; color:var(--ink-faint); text-transform:uppercase; font-weight:600;}
+
+/* ============ REVEAL UTILITY ============ */
+.reveal-up{opacity:0; transform:translateY(36px); transition:opacity .8s var(--ease), transform .8s var(--ease);}
+.reveal-up.in{opacity:1; transform:translateY(0);}
+.reveal-scale{opacity:0; transform:scale(.92); transition:opacity .8s var(--ease), transform .8s var(--ease);}
+.reveal-scale.in{opacity:1; transform:scale(1);}
+.stagger > *{transition-delay:calc(var(--d,0) * 90ms);}
+
+/* ============ SECTION HEAD ============ */
+.section-pad{padding:120px 0;}
+.section-head{max-width:640px; margin-bottom:60px;}
+.section-head .eyebrow{margin-bottom:16px;}
+.section-head h2{font-size:clamp(28px,3.6vw,42px); line-height:1.12;}
+.section-head p{margin-top:16px; font-size:16.5px;}
+.alt-bg{background:linear-gradient(180deg, var(--bg-1), var(--bg-0));}
+
+/* ============ MARQUEE (trusted by) ============ */
+.marquee-wrap{padding:56px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--bg-1); overflow:hidden;}
+.marquee-label{text-align:center; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); font-weight:600; margin-bottom:30px;}
+.marquee{display:flex; width:max-content; gap:70px; animation:scroll-x 32s linear infinite;}
+.marquee:hover{animation-play-state:paused;}
+@keyframes scroll-x{from{transform:translateX(0);} to{transform:translateX(-50%);}}
+.marquee .item{font-family:'Space Grotesk'; font-weight:600; font-size:19px; color:var(--ink-faint); white-space:nowrap; opacity:.75; display:flex; align-items:center; gap:10px;}
+.marquee .item::before{content:''; width:6px;height:6px;border-radius:50%; background:var(--ink-faint); opacity:.4;}
+
+/* ============ SERVICES GRID ============ */
+.services-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+.s-card{
+  position:relative; border-radius:var(--radius); padding:30px 26px; background:var(--bg-1);
+  border:1px solid var(--line); overflow:hidden; transition:transform .45s var(--ease), box-shadow .45s var(--ease), border-color .45s;
+}
+.s-card::before{
+  content:''; position:absolute; inset:0; border-radius:inherit; padding:1px;
+  background:linear-gradient(135deg,var(--blue),var(--cyan)); opacity:0; transition:opacity .4s;
+  -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite:xor; mask-composite:exclude;
+}
+.s-card:hover{transform:translateY(-8px); box-shadow:var(--shadow-lg); border-color:transparent;}
+.s-card:hover::before{opacity:1;}
+.s-card .icon{width:46px; height:46px; border-radius:13px; background:linear-gradient(135deg,var(--bg-2),#fff); display:flex; align-items:center; justify-content:center; margin-bottom:20px; box-shadow:inset 0 0 0 1px var(--line);}
+.s-card h3{font-size:18px; margin-bottom:9px;}
+.s-card p{font-size:14.5px;}
+.s-card .tag{position:absolute; top:26px; right:26px; font-size:10px; font-family:'IBM Plex Mono'; color:var(--ink-faint); letter-spacing:.05em;}
+
+/* ============ INTERACTIVE EXPLORER ============ */
+.explorer{display:grid; grid-template-columns:280px 1fr; gap:0; border:1px solid var(--line); border-radius:28px; overflow:hidden; background:var(--bg-1); box-shadow:var(--shadow-md);}
+.explorer-tabs{background:var(--bg-2); padding:14px; display:flex; flex-direction:column; gap:4px;}
+.e-tab{padding:13px 16px; border-radius:14px; font-size:14.5px; font-weight:600; color:var(--ink-soft); cursor:pointer; transition:all .25s; border:none; background:transparent; text-align:left; display:flex; justify-content:space-between; align-items:center; font-family:'Inter';}
+.e-tab:hover{background:rgba(255,255,255,.6);}
+.e-tab.active{background:#fff; color:var(--indigo); box-shadow:var(--shadow-sm);}
+.e-tab .count{font-family:'IBM Plex Mono'; font-size:11px; color:var(--ink-faint);}
+.explorer-panel{padding:36px 40px; background:#fff;}
+.explorer-panel h3{font-size:22px; margin-bottom:6px;}
+.explorer-panel .std{font-size:12.5px; color:var(--ink-faint); margin-bottom:22px;}
+.test-list{display:grid; grid-template-columns:1fr 1fr; gap:12px 24px; list-style:none; padding:0; margin:0;}
+.test-list li{display:flex; align-items:flex-start; gap:10px; font-size:14px; color:var(--ink-soft); padding-bottom:12px; border-bottom:1px dashed var(--line); opacity:0; transform:translateY(8px); animation:testIn .5s var(--ease) forwards;}
+@keyframes testIn{to{opacity:1; transform:translateY(0);}}
+.test-list li svg{margin-top:3px; flex-shrink:0;}
+
+/* ============ STATS ============ */
+.stats-band{
+  background:linear-gradient(120deg, #0B1220, #14204A 45%, #10233E);
+  border-radius:32px; padding:64px 50px; display:grid; grid-template-columns:repeat(4,1fr); gap:30px;
+  position:relative; overflow:hidden;
+}
+.stats-band::before{content:''; position:absolute; inset:0; background:radial-gradient(600px 300px at 15% 0%, rgba(37,99,235,.35), transparent), radial-gradient(500px 300px at 100% 100%, rgba(6,182,212,.25), transparent);}
+.stat{position:relative; z-index:1; text-align:left; border-left:1px solid rgba(255,255,255,.12); padding-left:24px;}
+.stat:first-child{border-left:none; padding-left:0;}
+.stat .num{font-family:'IBM Plex Mono'; font-size:clamp(30px,3.4vw,44px); font-weight:600; color:#fff; display:flex; align-items:baseline; gap:2px;}
+.stat .num .suffix{font-size:22px; color:var(--cyan);}
+.stat .label{color:rgba(255,255,255,.6); font-size:13.5px; margin-top:8px; max-width:180px;}
+
+/* ============ PRODUCT SHOWCASE (sticky story) ============ */
+.showcase{display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:flex-start;}
+.showcase-visual{position:sticky; top:110px; height:480px; border-radius:28px; background:linear-gradient(160deg,var(--bg-2),#fff); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; overflow:hidden; box-shadow:var(--shadow-md);}
+.showcase-steps{display:flex; flex-direction:column; gap:120px; padding:20px 0 60px;}
+.showcase-step{}
+.showcase-step .idx{font-family:'IBM Plex Mono'; color:var(--indigo); font-size:13px; margin-bottom:12px; display:block;}
+.showcase-step h3{font-size:25px; margin-bottom:12px;}
+.showcase-step p{font-size:15.5px;}
+
+/* ============ WHY US (stacking cards) ============ */
+.why-list{display:flex; flex-direction:column; gap:16px;}
+.why-card{
+  position:sticky; top:100px; background:var(--bg-1); border:1px solid var(--line); border-radius:var(--radius);
+  padding:36px 40px; display:grid; grid-template-columns:60px 1fr; gap:26px; align-items:center;
+  box-shadow:0 20px 45px -25px rgba(15,23,42,.25);
+}
+.why-card .num{font-family:'IBM Plex Mono'; font-size:24px; color:var(--ink-faint); font-weight:500;}
+.why-card h3{font-size:19px; margin-bottom:6px;}
+.why-card p{font-size:14.5px;}
+
+/* ============ PROCESS TIMELINE ============ */
+.timeline{position:relative; padding-left:2px;}
+.timeline .spine{position:absolute; left:23px; top:6px; bottom:6px; width:2px; background:var(--line);}
+.timeline .spine-fill{position:absolute; left:23px; top:6px; width:2px; background:linear-gradient(var(--blue),var(--cyan)); height:0%; transition:height .1s linear;}
+.t-step{display:grid; grid-template-columns:48px 1fr; gap:26px; padding-bottom:56px; position:relative;}
+.t-step:last-child{padding-bottom:0;}
+.t-dot{width:48px; height:48px; border-radius:50%; background:#fff; border:2px solid var(--line); display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono'; font-weight:600; font-size:14px; color:var(--ink-faint); position:relative; z-index:1; transition:all .4s;}
+.t-step.in .t-dot{border-color:var(--blue); color:var(--blue); background:var(--bg-2); box-shadow:0 0 0 6px rgba(37,99,235,.1);}
+.t-step h3{font-size:19px; margin-bottom:8px;}
+.t-step p{font-size:14.5px; max-width:520px;}
+
+/* ============ TESTIMONIALS ============ */
+.testi-row{display:flex; gap:22px; overflow-x:auto; padding:10px 4px 26px; scroll-snap-type:x mandatory; scrollbar-width:thin;}
+.testi-row::-webkit-scrollbar{height:6px;}
+.testi-row::-webkit-scrollbar-thumb{background:var(--line); border-radius:10px;}
+.t-card{
+  scroll-snap-align:start; flex:0 0 min(400px,86vw); background:var(--bg-1); border:1px solid var(--line);
+  border-radius:var(--radius); padding:32px; display:flex; flex-direction:column; gap:20px;
+}
+.t-card .quote{font-size:15.5px; color:var(--ink); line-height:1.7;}
+.t-card .who{display:flex; align-items:center; gap:12px; margin-top:auto;}
+.t-card .avatar{width:42px; height:42px; border-radius:50%; background:linear-gradient(135deg,var(--blue),var(--cyan)); flex-shrink:0;}
+.t-card .who b{display:block; font-size:14px;}
+.t-card .who span{font-size:12.5px; color:var(--ink-faint);}
+.stars{display:flex; gap:3px;}
+
+/* ============ PORTFOLIO (horizontal scroll) ============ */
+.folio-row{display:flex; gap:22px; overflow-x:auto; padding:10px 4px 26px; scroll-snap-type:x mandatory;}
+.folio-row::-webkit-scrollbar{height:6px;}
+.folio-row::-webkit-scrollbar-thumb{background:var(--line); border-radius:10px;}
+.f-card{
+  scroll-snap-align:start; flex:0 0 min(460px,88vw); border-radius:var(--radius); overflow:hidden; border:1px solid var(--line);
+  background:#fff; box-shadow:var(--shadow-sm); transition:transform .45s var(--ease), box-shadow .45s var(--ease);
+}
+.f-card:hover{transform:translateY(-6px); box-shadow:var(--shadow-lg);}
+.f-visual{height:220px; position:relative; overflow:hidden; background:linear-gradient(135deg,var(--bg-2),#EAF6FF);}
+.f-visual .blueprint{position:absolute; inset:0; opacity:.9;}
+.f-visual .status{position:absolute; top:16px; left:16px; background:rgba(255,255,255,.85); backdrop-filter:blur(8px); padding:6px 12px; border-radius:100px; font-size:11px; font-weight:700; color:#059669; display:flex; align-items:center; gap:6px;}
+.f-visual .status i{width:6px;height:6px;border-radius:50%; background:#059669;}
+.f-body{padding:26px;}
+.f-body .client{font-size:11.5px; text-transform:uppercase; letter-spacing:.07em; color:var(--ink-faint); font-weight:600; margin-bottom:8px;}
+.f-body h3{font-size:19px; margin-bottom:10px;}
+.f-body p{font-size:14px;}
+.f-body .meta{display:flex; gap:16px; margin-top:18px; padding-top:16px; border-top:1px solid var(--line);}
+.f-body .meta div{font-size:11.5px; color:var(--ink-faint);}
+.f-body .meta b{display:block; color:var(--ink); font-family:'IBM Plex Mono'; font-size:13px; margin-top:2px;}
+
+/* ============ FAQ ============ */
+.faq-item{border-bottom:1px solid var(--line);}
+.faq-q{width:100%; text-align:left; background:none; border:none; padding:26px 4px; font-family:'Space Grotesk'; font-size:17px; font-weight:600; color:var(--ink); display:flex; justify-content:space-between; align-items:center; cursor:pointer; gap:20px;}
+.faq-q .plus{width:26px; height:26px; border-radius:50%; border:1px solid var(--line); flex-shrink:0; position:relative; transition:transform .4s var(--ease), background .3s;}
+.faq-q .plus::before, .faq-q .plus::after{content:''; position:absolute; background:var(--ink-soft); top:50%; left:50%; transform:translate(-50%,-50%);}
+.faq-q .plus::before{width:10px; height:1.4px;}
+.faq-q .plus::after{width:1.4px; height:10px; transition:opacity .3s;}
+.faq-item.open .plus{transform:rotate(90deg); background:var(--bg-2); border-color:transparent;}
+.faq-item.open .plus::after{opacity:0;}
+.faq-a{max-height:0; overflow:hidden; transition:max-height .5s var(--ease);}
+.faq-a p{padding:0 4px 26px; font-size:15px; max-width:640px;}
+
+/* ============ CTA BANNER ============ */
+.cta-banner{
+  border-radius:32px; padding:76px 60px; text-align:center; position:relative; overflow:hidden;
+  background:linear-gradient(120deg,var(--blue),var(--indigo) 60%, var(--cyan));
+}
+.cta-banner::before{content:''; position:absolute; inset:0; background-image:radial-gradient(rgba(255,255,255,.18) 1.5px, transparent 1.5px); background-size:26px 26px; opacity:.5;}
+.cta-banner h2{color:#fff; font-size:clamp(28px,4vw,44px); position:relative; z-index:1; max-width:680px; margin:0 auto;}
+.cta-banner p{color:rgba(255,255,255,.85); position:relative; z-index:1; margin-top:16px; font-size:16.5px;}
+.cta-banner .cta-row{justify-content:center; position:relative; z-index:1;}
+.cta-banner .btn-ghost{background:rgba(255,255,255,.15); border-color:rgba(255,255,255,.3); color:#fff;}
+.cta-banner .btn-primary{background:#fff; color:var(--indigo); box-shadow:0 8px 24px -6px rgba(0,0,0,.25);}
+
+/* ============ FOOTER ============ */
+footer{background:#0B1220; color:rgba(255,255,255,.65); padding:80px 0 30px;}
+.footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:50px; padding-bottom:60px; border-bottom:1px solid rgba(255,255,255,.1);}
+.footer-brand .logo{color:#fff;}
+.footer-brand p{color:rgba(255,255,255,.55); margin-top:16px; max-width:280px; font-size:14px;}
+.footer-brand .tagline{margin-top:18px; font-family:'IBM Plex Mono'; font-size:12px; color:var(--cyan);}
+footer h4{color:#fff; font-size:13px; letter-spacing:.06em; text-transform:uppercase; margin-bottom:18px; font-weight:600; font-family:'Inter';}
+footer ul{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;}
+footer ul a{font-size:14px; color:rgba(255,255,255,.6); transition:color .25s;}
+footer ul a:hover{color:#fff;}
+.footer-bottom{display:flex; justify-content:space-between; align-items:center; padding-top:26px; font-size:12.5px; color:rgba(255,255,255,.4); flex-wrap:wrap; gap:12px;}
+.footer-bottom .accred{display:flex; gap:10px;}
+.footer-bottom .accred span{border:1px solid rgba(255,255,255,.15); padding:4px 10px; border-radius:100px; font-family:'IBM Plex Mono'; font-size:11px;}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:980px){
+  nav.links{display:none;}
+  .hero-grid{grid-template-columns:1fr;}
+  .hero-visual{height:420px; margin-top:20px;}
+  .services-grid{grid-template-columns:repeat(2,1fr);}
+  .explorer{grid-template-columns:1fr;}
+  .explorer-tabs{flex-direction:row; overflow-x:auto;}
+  .stats-band{grid-template-columns:repeat(2,1fr);}
+  .showcase{grid-template-columns:1fr;}
+  .showcase-visual{position:relative; top:0; height:320px;}
+  .showcase-steps{gap:40px; padding-bottom:0;}
+  .why-card{grid-template-columns:44px 1fr; padding:26px;}
+  .footer-grid{grid-template-columns:1fr 1fr; gap:36px;}
+}
+@media (max-width:640px){
+  .wrap{padding:0 20px;}
+  .section-pad{padding:80px 0;}
+  .services-grid{grid-template-columns:1fr;}
+  .stats-band{grid-template-columns:1fr 1fr; padding:40px 26px;}
+  .cta-banner{padding:56px 26px;}
+  .footer-grid{grid-template-columns:1fr;}
+  .test-list{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<div id="cursor-glow"></div>
+<div id="progress"></div>
+
+<!-- ============ NAVBAR ============ -->
+<header class="nav" id="navbar">
+  <div class="inner">
+    <a href="#" class="logo">
+      <span class="mark">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="position:absolute;inset:0;margin:auto;"><path d="M6 21V10M12 21V6M18 21V13" stroke="white" stroke-width="2.2" stroke-linecap="round"/></svg>
+      </span>
+      <span>Mega Quality Lab<small>Soil &amp; Building Materials Testing</small></span>
+    </a>
+    <nav class="links">
+      <a href="#services">Services</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#process">Process</a>
+      <a href="#projects">Projects</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-primary btn-sm">Request Testing</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="grid-overlay"></div>
+  <div class="mesh-blob b1"></div>
+  <div class="mesh-blob b2"></div>
+  <div class="mesh-blob b3"></div>
+  <div id="particles"></div>
+
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow"><span class="dot"></span> EIAC ACCREDITED · ISO/IEC 17025:2017</div>
+      <h1>
+        <span class="reveal"><span style="--i:0">Precision testing</span></span>
+        <span class="reveal"><span style="--i:1" class="grad">you can build on.</span></span>
+      </h1>
+      <p class="lead">Mega Quality Laboratory tests soil, concrete, steel and building materials to BS &amp; ASTM standards — from field borehole to certified report — for contractors and consultants across the UAE.</p>
+      <div class="cta-row">
+        <a href="#contact" class="btn btn-primary">Request a Test →</a>
+        <a href="#capabilities" class="btn btn-ghost">View Accreditation Scope</a>
+      </div>
+      <div class="badges">
+        <div class="b"><b class="mono">2020</b>Operating in Dubai &amp; RAK since</div>
+        <div class="b"><b class="mono">LB‑TEST‑271</b>EIAC accreditation no.</div>
+        <div class="b"><b class="mono">150+</b>Standard test methods</div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="float-card fc1">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4z" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        ISO/IEC 17025:2017
+      </div>
+      <div class="float-card fc2">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6" stroke="#06B6D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        3 Major UAE Projects
+      </div>
+      <div class="float-card fc3">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#4F46E5" stroke-width="2"/><path d="M12 7v5l3 3" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"/></svg>
+        28‑day report
+      </div>
+
+      <div class="readout">
+        <div class="readout-head">
+          <div>
+            <div class="t1">Live readout</div>
+            <div class="t2">Cube Compressive Strength</div>
+          </div>
+          <div class="live-tag"><i></i>TESTING</div>
+        </div>
+        <div class="readout-chart">
+          <svg viewBox="0 0 300 190" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#2563EB"/>
+                <stop offset="60%" stop-color="#4F46E5"/>
+                <stop offset="100%" stop-color="#06B6D4"/>
+              </linearGradient>
+              <linearGradient id="fillGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#4F46E5" stop-opacity="0.25"/>
+                <stop offset="100%" stop-color="#4F46E5" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path class="chart-fill" d="M0,180 C40,175 60,150 90,120 C120,90 140,40 180,25 C210,14 240,10 300,8 L300,190 L0,190 Z"/>
+            <path class="chart-line" d="M0,180 C40,175 60,150 90,120 C120,90 140,40 180,25 C210,14 240,10 300,8"/>
+          </svg>
+        </div>
+        <div class="readout-metrics">
+          <div class="metric">
+            <div class="m-label">Load</div>
+            <div class="m-val" id="loadVal">0 kN</div>
+          </div>
+          <div class="metric">
+            <div class="m-label">Strength</div>
+            <div class="m-val accent" id="mpaVal">0 MPa</div>
+          </div>
+          <div class="metric">
+            <div class="m-label">Std.</div>
+            <div class="m-val" style="font-size:14px;">BS 1881‑116</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue"><span>Scroll</span><div class="line"></div></div>
+</section>
+
+<!-- ============ TRUSTED BY ============ -->
+<div class="marquee-wrap">
+  <div class="marquee-label">Approved third‑party testing laboratory on</div>
+  <div class="marquee" id="marquee">
+    <span class="item">Sharjah Airport Authority</span>
+    <span class="item">RTA — Building &amp; Facilities</span>
+    <span class="item">DAMAC Lagoons</span>
+    <span class="item">Al Hamad Building Contracting</span>
+    <span class="item">Al Serh Al Kabeer Construction</span>
+    <span class="item">Dubai Civil Engineering LLC</span>
+    <span class="item">Sharjah Airport Authority</span>
+    <span class="item">RTA — Building &amp; Facilities</span>
+    <span class="item">DAMAC Lagoons</span>
+    <span class="item">Al Hamad Building Contracting</span>
+    <span class="item">Al Serh Al Kabeer Construction</span>
+    <span class="item">Dubai Civil Engineering LLC</span>
+  </div>
+</div>
+
+<!-- ============ SERVICES ============ -->
+<section class="section-pad" id="services">
+  <div class="wrap">
+    <div class="section-head reveal-up">
+      <div class="eyebrow" style="color:var(--blue);"><span class="dot" style="background:var(--blue);"></span> Our Services</div>
+      <h2>Nine material categories.<br>One accredited scope.</h2>
+      <p>Every test is performed in‑house, under our ISO/IEC 17025:2017 quality system, to British and American standards.</p>
+    </div>
+
+    <div class="services-grid stagger" id="servicesGrid">
+      <!-- injected by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTERACTIVE EXPLORER ============ -->
+<section class="section-pad alt-bg" id="capabilities">
+  <div class="wrap">
+    <div class="section-head reveal-up">
+      <div class="eyebrow" style="color:var(--indigo);"><span class="dot" style="background:var(--indigo);"></span> Test Explorer</div>
+      <h2>Browse the accreditation scope</h2>
+      <p>Select a material to see the standard test methods we run against it, drawn directly from our EIAC‑accredited scope.</p>
+    </div>
+
+    <div class="explorer reveal-scale">
+      <div class="explorer-tabs" id="explorerTabs"></div>
+      <div class="explorer-panel" id="explorerPanel"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="section-pad">
+  <div class="wrap">
+    <div class="stats-band reveal-scale">
+      <div class="stat"><div class="num"><span class="counter" data-target="5">0</span><span class="suffix">+</span></div><div class="label">Years testing materials across the UAE</div></div>
+      <div class="stat"><div class="num"><span class="counter" data-target="150">0</span><span class="suffix">+</span></div><div class="label">Standard BS &amp; ASTM test methods in scope</div></div>
+      <div class="stat"><div class="num"><span class="counter" data-target="3000">0</span><span class="suffix">kN</span></div><div class="label">Max load capacity of our advanced CTM</div></div>
+      <div class="stat"><div class="num"><span class="counter" data-target="4">0</span><span class="suffix"></span></div><div class="label">EIAC scope areas: soil, mechanical, chemical, building inspection</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCT SHOWCASE ============ -->
+<section class="section-pad alt-bg">
+  <div class="wrap">
+    <div class="section-head reveal-up">
+      <div class="eyebrow" style="color:var(--cyan);"><span class="dot" style="background:var(--cyan);"></span> Field to Report</div>
+      <h2>From borehole to certified report</h2>
+    </div>
+
+    <div class="showcase">
+      <div class="showcase-visual" id="showcaseVisual">
+        <!-- injected svg per step -->
+      </div>
+      <div class="showcase-steps" id="showcaseSteps">
+        <div class="showcase-step" data-visual="drill">
+          <span class="idx">01 · Field</span>
+          <h3>Geotechnical drilling &amp; sampling</h3>
+          <p>Our own crew drills boreholes by percussion or rotary coring per BS 5930, running Standard Penetration Tests, groundwater sampling and piezometer installation on site.</p>
+        </div>
+        <div class="showcase-step" data-visual="cube">
+          <span class="idx">02 · Laboratory</span>
+          <h3>Compressive &amp; physical testing</h3>
+          <p>Concrete cubes, cores and beams are cured and loaded on our Advanced CTM‑3000kN; aggregates, cement and steel undergo full physical and chemical testing to BS/ASTM.</p>
+        </div>
+        <div class="showcase-step" data-visual="chart">
+          <span class="idx">03 · Quality Review</span>
+          <h3>QA/QC verification</h3>
+          <p>Every result is checked against our ISO/IEC 17025:2017 quality system before it leaves the lab — impartial, confidential, and traceable.</p>
+        </div>
+        <div class="showcase-step" data-visual="doc">
+          <span class="idx">04 · Delivery</span>
+          <h3>Certified test report</h3>
+          <p>A signed, accredited report is issued referencing the exact standard applied — ready for submission to your consultant or authority.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section class="section-pad">
+  <div class="wrap">
+    <div class="section-head reveal-up">
+      <div class="eyebrow" style="color:var(--blue);"><span class="dot" style="background:var(--blue);"></span> Why Choose Us</div>
+      <h2>Accredited. Independent. On site.</h2>
+    </div>
+
+    <div class="why-list">
+      <div class="why-card reveal-up" style="top:100px;">
+        <div class="num">01</div>
+        <div><h3>EIAC‑accredited to ISO/IEC 17025:2017</h3><p>Certificate LB‑TEST‑271, valid through 18 Feb 2028 — covering soil, mechanical &amp; physical, chemical &amp; biological testing, and building inspection.</p></div>
+      </div>
+      <div class="why-card reveal-up" style="top:118px;">
+        <div class="num">02</div>
+        <div><h3>Sharjah Municipality registered laboratory</h3><p>Listed on the Sharjah Laboratories Registration Program alongside our EIAC scope.</p></div>
+      </div>
+      <div class="why-card reveal-up" style="top:136px;">
+        <div class="num">03</div>
+        <div><h3>Field and lab testing, fully in‑house</h3><p>Our own drill rigs, crew and Advanced CTM‑3000kN mean no subcontracted results and full traceability.</p></div>
+      </div>
+      <div class="why-card reveal-up" style="top:154px;">
+        <div class="num">04</div>
+        <div><h3>Confidentiality &amp; impartiality by policy</h3><p>A written Quality &amp; EHS policy, signed by every technician, protects client data and testing objectivity.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS TIMELINE ============ -->
+<section class="section-pad alt-bg" id="process">
+  <div class="wrap" style="max-width:900px;">
+    <div class="section-head reveal-up">
+      <div class="eyebrow" style="color:var(--indigo);"><span class="dot" style="background:var(--indigo);"></span> Our Process</div>
+      <h2>How a test moves through our lab</h2>
+    </div>
+
+    <div class="timeline" id="timeline">
+      <div class="spine"></div>
+      <div class="spine-fill" id="spineFill"></div>
+
+      <div class="t-step">
+        <div class="t-dot">01</div>
+        <div><h3>Sample collection &amp; field investigation</h3><p>Materials are sampled on site, or our team performs drilling, in‑situ density and plate load tests directly in the field.</p></div>
+      </div>
+      <div class="t-step">
+        <div class="t-dot">02</div>
+        <div><h3>Laboratory testing</h3><p>Samples are logged and tested against the applicable BS or ASTM method — from sieve analysis to compressive strength.</p></div>
+      </div>
+      <div class="t-step">
+        <div class="t-dot">03</div>
+        <div><h3>QA/QC review</h3><p>Results are cross‑checked by our QC Manager against the quality system before sign‑off.</p></div>
+      </div>
+      <div class="t-step">
+        <div class="t-dot">04</div>
+        <div><h3>Certified report issued</h3><p>A signed report, referencing the exact standard, is delivered to your consultant or authority.</p></div>
+      </div>
+      <div class="t-step">
+        <div class="t-dot">05</div>
+        <div><h3>Consultation</h3><p>Our engineers are available to walk through results, mix designs, or remedial recommendations.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section-pad">
+  <div class="wrap">
+    <div class="section-head reveal-up">
+      <div class="eyebrow" style="color:var(--cyan);"><span class="dot" style="background:var(--cyan);"></span> Client Feedback</div>
+      <h2>What contractors say about working with us</h2>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="testi-row">
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">Turnaround on our cube tests was consistent even during peak pours, and the reports were always accepted first time by the consultant.</p>
+        <div class="who"><div class="avatar"></div><div><b>Site QA/QC Manager</b><span>General Contractor</span></div></div>
+      </div>
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">Their field crew ran our boreholes and SPTs on schedule and the soil classification data lined up with the design assumptions.</p>
+        <div class="who"><div class="avatar"></div><div><b>Geotechnical Engineer</b><span>Design Consultancy</span></div></div>
+      </div>
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">Straightforward pre‑qualification, clear scope of accreditation, and responsive engineers whenever we needed clarification on a result.</p>
+        <div class="who"><div class="avatar"></div><div><b>Senior Project Manager</b><span>Fit‑Out Contractor</span></div></div>
+      </div>
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">Good documentation discipline — every certificate referenced the exact BS clause, which made our audit trail much easier.</p>
+        <div class="who"><div class="avatar"></div><div><b>Materials Engineer</b><span>Infrastructure Consultant</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PORTFOLIO ============ -->
+<section class="section-pad alt-bg" id="projects">
+  <div class="wrap">
+    <div class="section-head reveal-up">
+      <div class="eyebrow" style="color:var(--blue);"><span class="dot" style="background:var(--blue);"></span> Selected Projects</div>
+      <h2>Approved on major UAE developments</h2>
+      <p>A sample of pre‑qualification and testing approvals on file.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="folio-row">
+      <div class="f-card">
+        <div class="f-visual">
+          <svg class="blueprint" viewBox="0 0 460 220" fill="none"><rect x="60" y="60" width="340" height="120" stroke="#2563EB" stroke-width="1.5" opacity=".5"/><path d="M60 180 L60 60 L400 60" stroke="#2563EB" stroke-width="1.5" opacity=".5"/><circle cx="230" cy="120" r="45" stroke="#4F46E5" stroke-width="1.5" opacity=".4"/><path d="M100 140h60M280 140h60M180 90v70" stroke="#06B6D4" stroke-width="1.2" opacity=".5"/></svg>
+          <div class="status"><i></i>Approved</div>
+        </div>
+        <div class="f-body">
+          <div class="client">Sharjah Airport Authority</div>
+          <h3>CP415 Fit‑Out &amp; Associated Works</h3>
+          <p>Engaged as an alternative independent testing laboratory, accepted by the Construction Supervision Consultant.</p>
+          <div class="meta"><div>Scope<b>Materials Testing</b></div><div>Status<b>Approved 2023</b></div></div>
+        </div>
+      </div>
+      <div class="f-card">
+        <div class="f-visual">
+          <svg class="blueprint" viewBox="0 0 460 220" fill="none"><path d="M40 180 L120 80 L200 180 Z" stroke="#06B6D4" stroke-width="1.5" opacity=".5"/><path d="M120 80 L120 40" stroke="#06B6D4" stroke-width="1.5" opacity=".5"/><rect x="240" y="100" width="180" height="80" stroke="#2563EB" stroke-width="1.5" opacity=".5"/><path d="M240 140h180M280 100v80M360 100v80" stroke="#4F46E5" stroke-width="1.2" opacity=".4"/></svg>
+          <div class="status"><i></i>Approved</div>
+        </div>
+        <div class="f-body">
+          <div class="client">RTA — Building &amp; Facilities</div>
+          <h3>Hatta Dam Ramp Construction</h3>
+          <p>Sub‑contracted soil laboratory testing for ramp construction works at Hatta Dam, UAE.</p>
+          <div class="meta"><div>Scope<b>Soil Testing</b></div><div>Status<b>Approved 2024</b></div></div>
+        </div>
+      </div>
+      <div class="f-card">
+        <div class="f-visual">
+          <svg class="blueprint" viewBox="0 0 460 220" fill="none"><rect x="60" y="70" width="90" height="110" stroke="#4F46E5" stroke-width="1.5" opacity=".5"/><rect x="170" y="50" width="90" height="130" stroke="#2563EB" stroke-width="1.5" opacity=".5"/><rect x="280" y="90" width="90" height="90" stroke="#06B6D4" stroke-width="1.5" opacity=".5"/></svg>
+          <div class="status"><i></i>Approved</div>
+        </div>
+        <div class="f-body">
+          <div class="client">DAMAC Lagoons</div>
+          <h3>812 Villas &amp; Townhouses, Portofino Cluster</h3>
+          <p>Pre‑qualified third‑party laboratory for concrete, soil and steel testing across the residential cluster.</p>
+          <div class="meta"><div>Scope<b>Concrete · Soil · Steel</b></div><div>Status<b>Approved 2023</b></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section-pad" id="faq">
+  <div class="wrap" style="max-width:800px;">
+    <div class="section-head reveal-up">
+      <div class="eyebrow" style="color:var(--indigo);"><span class="dot" style="background:var(--indigo);"></span> FAQ</div>
+      <h2>Common questions</h2>
+    </div>
+
+    <div id="faqList">
+      <div class="faq-item open">
+        <button class="faq-q">What standards do you test to?<span class="plus"></span></button>
+        <div class="faq-a"><p>We test to British Standards (BS) and American Standards (ASTM) across our EIAC‑accredited scope: soil testing, mechanical &amp; physical testing, chemical &amp; biological analysis, and building inspection services, under ISO/IEC 17025:2017.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do you provide on‑site or field testing?<span class="plus"></span></button>
+        <div class="faq-a"><p>Yes. Our own drilling crew and equipment run borehole drilling, Standard Penetration Tests, in‑situ density, plate load tests and groundwater sampling directly on your site.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How long does a certified report take?<span class="plus"></span></button>
+        <div class="faq-a"><p>Turnaround depends on the test — some results are same‑day, while concrete strength tests follow standard curing periods (commonly 7 and 28 days) before the certified report is issued.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Are you accredited?<span class="plus"></span></button>
+        <div class="faq-a"><p>Yes — EIAC‑accredited to ISO/IEC 17025:2017 under certificate LB‑TEST‑271, valid to 18 February 2028, and registered under the Sharjah Laboratories Registration Program.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Where is the laboratory located?<span class="plus"></span></button>
+        <div class="faq-a"><p>Plot No. 284‑242, Warehouse No. 3, Al Ttay, Dubai, United Arab Emirates.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BANNER ============ -->
+<section class="section-pad" id="contact">
+  <div class="wrap">
+    <div class="cta-banner reveal-scale">
+      <h2>Every structure deserves a lab that gets it right the first time.</h2>
+      <p>Send us your project scope and we'll come back with a testing plan and quotation.</p>
+      <div class="cta-row" style="margin-top:32px;">
+        <a href="mailto:abdu_8866@hotmail.com" class="btn btn-primary">Request a Quotation →</a>
+        <a href="tel:+971526523220" class="btn btn-ghost">Call +971 52 652 3220</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="position:absolute;inset:0;margin:auto;"><path d="M6 21V10M12 21V6M18 21V13" stroke="white" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+          <span>Mega Quality Lab</span>
+        </a>
+        <p>Mega Quality Laboratory for Soil and Building Materials Testing — Dubai, UAE. EIAC‑accredited to ISO/IEC 17025:2017.</p>
+        <div class="tagline">"Your Quality Our Priority"</div>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Concrete Testing</a></li>
+          <li><a href="#services">Soil &amp; Geotechnical</a></li>
+          <li><a href="#services">Steel &amp; Cement</a></li>
+          <li><a href="#services">Aggregate &amp; Asphalt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#capabilities">Accreditation</a></li>
+          <li><a href="#process">Our Process</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Plot 284‑242, Warehouse 3, Al Ttay, Dubai, UAE</li>
+          <li><a href="tel:+971526523220">+971 52 652 3220</a></li>
+          <li><a href="mailto:abdu_8866@hotmail.com">abdu_8866@hotmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Mega Quality Laboratory for Soil and Building Materials Testing. All rights reserved.</span>
+      <div class="accred"><span>ISO/IEC 17025:2017</span><span>LB‑TEST‑271</span></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============ DATA ============ */
+const SERVICES = [
+  {code:'MT‑01', name:'Steel', desc:'Tensile, bend & rebend, chemical analysis including carbon equivalent value.', icon:'M4 21V9l8-6 8 6v12M4 21h16'},
+  {code:'MT‑02', name:'Cement', desc:'Consistency, setting time, soundness, compressive strength & fineness by Blaine air.', icon:'M12 2l3 6 6 1-4.5 4 1 6-5.5-3-5.5 3 1-6L3 9l6-1 3-6z'},
+  {code:'MT‑03', name:'Aggregate', desc:'Sieve analysis, impact & crushing value, specific gravity, flakiness index.', icon:'M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z'},
+  {code:'MT‑04', name:'Concrete', desc:'Cube, core and beam strength; blocks, bricks, pavers and mix design.', icon:'M3 21h18M5 21V9l7-6 7 6v12'},
+  {code:'MT‑05', name:'Soil', desc:'Moisture, Atterberg limits, CBR, direct & tri‑axial shear, classification.', icon:'M2 12h20M2 12c0-4 4-7 10-7s10 3 10 7-4 7-10 7-10-3-10-7z'},
+  {code:'MT‑06', name:'NDT', desc:'UPV, rebound hammer, half‑cell potential and carbonation depth testing.', icon:'M3 12h4l3-9 4 18 3-9h4'},
+  {code:'MT‑07', name:'Admixture', desc:'pH, density, ash content, chloride and solid content analysis.', icon:'M9 3h6l1 5-4 3v10h-4V11L4 8l1-5h4z'},
+  {code:'MT‑08', name:'Asphalt', desc:'Marshall stability & flow, bulk specific gravity, binder content by ignition.', icon:'M4 20l4-14h8l4 14M8 20h8'},
+  {code:'MT‑09', name:'Geotechnical', desc:'Borehole drilling, SPT, groundwater sampling, piezometer installation.', icon:'M12 2v6M8 6l4 2 4-2M4 10l8 4 8-4M4 10v8l8 4 8-4v-8'}
+];
+
+const EXPLORER = {
+  "Concrete": {std:"BS 1881 · ASTM C39 / C1202", tests:[
+    "Compressive strength of cubes","Compressive strength of cores","Flexural strength of beams",
+    "Slump & temperature (fresh)","Air content (fresh)","Rapid Chloride Permeability (RCP)",
+    "Water absorption (hardened)","Setting time of fresh concrete","Cover meter survey","Pull‑out test on reinforced bars"
+  ]},
+  "Soil": {std:"BS 1377 · ASTM D2487 / D422", tests:[
+    "Moisture content","Liquid & plastic limit (Atterberg)","Grain size / sieve analysis",
+    "California Bearing Ratio (CBR)","Direct shear box test","Tri‑axial shear test",
+    "Maximum Dry Density (MDD/OMC)","Soil classification","In‑situ density (sand replacement)","Sedimentation (hydrometer)"
+  ]},
+  "Aggregate": {std:"BS 812 · ASTM C127 / C131", tests:[
+    "Sieve analysis (gradation)","Aggregate Impact Value (AIV)","Aggregate Crushing Value (ACV)",
+    "Flakiness & elongation index","Specific gravity & water absorption","Los Angeles abrasion",
+    "Ten Percent Fines Value (TFV)","Sand equivalent value","Acid soluble chloride/sulphate","Soundness (sulphate test)"
+  ]},
+  "Steel": {std:"BS 4449 · ASTM A775", tests:[
+    "Tensile strength","Bend test","Rebend test","Chemical analysis (Carbon Equivalent)",
+    "Galvanizing coating thickness","Coating flexibility","Holiday (coating continuity) test"
+  ]},
+  "Cement": {std:"BS EN 196", tests:[
+    "Standard consistency","Setting time (initial & final)","Soundness (Le Chatelier)",
+    "Compressive strength","Fineness (Blaine air)","Chemical composition analysis"
+  ]},
+  "Asphalt": {std:"ASTM D1559 · D2726", tests:[
+    "Marshall stability & flow","Bulk specific gravity","Theoretical max. specific gravity",
+    "Binder content (ignition method)","Coating & stripping test","Sieve analysis of extracted aggregate","Voids in compacted mixture"
+  ]},
+  "Geotechnical": {std:"BS 5930 · BS 1377 Part 9", tests:[
+    "Borehole drilling (percussion / rotary)","Standard Penetration Test (SPT)","Groundwater sampling",
+    "Piezometer installation","Ground water level measurement","In‑situ CBR","Plate load test"
+  ]}
+};
+
+/* ============ RENDER SERVICES ============ */
+const grid = document.getElementById('servicesGrid');
+SERVICES.forEach((s,i)=>{
+  const el = document.createElement('div');
+  el.className = 's-card reveal-scale';
+  el.style.setProperty('--d', i);
+  el.innerHTML = `
+    <span class="tag">${s.code}</span>
+    <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="${s.icon}"/></svg></div>
+    <h3>${s.name}</h3>
+    <p>${s.desc}</p>`;
+  grid.appendChild(el);
+});
+
+/* ============ RENDER EXPLORER ============ */
+const tabsEl = document.getElementById('explorerTabs');
+const panelEl = document.getElementById('explorerPanel');
+const materials = Object.keys(EXPLORER);
+function renderPanel(name){
+  const d = EXPLORER[name];
+  panelEl.innerHTML = `
+    <h3>${name} Testing</h3>
+    <div class="std mono">${d.std}</div>
+    <ul class="test-list">
+      ${d.tests.map((t,i)=>`<li style="animation-delay:${i*45}ms"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#06B6D4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>${t}</li>`).join('')}
+    </ul>`;
+}
+materials.forEach((m,i)=>{
+  const tab = document.createElement('button');
+  tab.className = 'e-tab' + (i===0?' active':'');
+  tab.innerHTML = `<span>${m}</span><span class="count mono">${EXPLORER[m].tests.length}</span>`;
+  tab.addEventListener('click', ()=>{
+    tabsEl.querySelectorAll('.e-tab').forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+    renderPanel(m);
+  });
+  tabsEl.appendChild(tab);
+});
+renderPanel(materials[0]);
+
+/* ============ NAVBAR SCROLL ============ */
+const navbar = document.getElementById('navbar');
+const progress = document.getElementById('progress');
+window.addEventListener('scroll', ()=>{
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
+  const h = document.documentElement;
+  const pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  progress.style.width = pct + '%';
+}, {passive:true});
+
+/* ============ CURSOR GLOW ============ */
+const glow = document.getElementById('cursor-glow');
+window.addEventListener('mousemove', (e)=>{
+  glow.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%,-50%)`;
+}, {passive:true});
+
+/* ============ PARTICLES ============ */
+const pWrap = document.getElementById('particles');
+for(let i=0;i<22;i++){
+  const p = document.createElement('div');
+  p.className = 'particle';
+  const size = 2 + Math.random()*4;
+  p.style.width = p.style.height = size+'px';
+  p.style.left = Math.random()*100+'%';
+  p.style.top = Math.random()*100+'%';
+  p.style.opacity = 0.15 + Math.random()*0.3;
+  p.style.animation = `float${(i%2)+1} ${10+Math.random()*14}s ease-in-out infinite`;
+  p.style.animationDelay = (Math.random()*6)+'s';
+  pWrap.appendChild(p);
+}
+
+/* ============ HERO CHART COUNTERS ============ */
+function animateHeroChart(){
+  const load = document.getElementById('loadVal');
+  const mpa = document.getElementById('mpaVal');
+  let start = null;
+  const duration = 3600;
+  function step(ts){
+    if(!start) start = ts;
+    let t = ((ts - start) % duration) / duration;
+    let eased = t < 0.55 ? (t/0.55) : 1;
+    eased = 1 - Math.pow(1-eased, 3);
+    load.textContent = Math.round(eased*640) + ' kN';
+    mpa.textContent = (eased*38.4).toFixed(1) + ' MPa';
+    requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+animateHeroChart();
+
+/* ============ REVEAL ON SCROLL ============ */
+const revealEls = document.querySelectorAll('.reveal-up, .reveal-scale');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){ e.target.classList.add('in'); }
+  });
+}, {threshold:0.15});
+revealEls.forEach(el=>io.observe(el));
+
+/* ============ COUNTERS ============ */
+const counters = document.querySelectorAll('.counter');
+const cIO = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const el = e.target;
+      const target = parseFloat(el.dataset.target);
+      let cur = 0;
+      const dur = 1600;
+      const start = performance.now();
+      function tick(ts){
+        const p = Math.min((ts-start)/dur, 1);
+        const eased = 1 - Math.pow(1-p, 3);
+        cur = target*eased;
+        el.textContent = target >= 100 ? Math.round(cur) : Math.round(cur);
+        if(p<1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      cIO.unobserve(el);
+    }
+  });
+}, {threshold:0.4});
+counters.forEach(c=>cIO.observe(c));
+
+/* ============ TIMELINE SPINE FILL ============ */
+const timeline = document.getElementById('timeline');
+const spineFill = document.getElementById('spineFill');
+const steps = document.querySelectorAll('.t-step');
+window.addEventListener('scroll', ()=>{
+  const rect = timeline.getBoundingClientRect();
+  const vh = window.innerHeight;
+  const total = rect.height;
+  const visible = Math.min(Math.max(vh*0.65 - rect.top, 0), total);
+  spineFill.style.height = visible + 'px';
+  steps.forEach(s=>{
+    const r = s.getBoundingClientRect();
+    if(r.top < vh*0.7) s.classList.add('in');
+  });
+}, {passive:true});
+
+/* ============ FAQ ACCORDION ============ */
+document.querySelectorAll('.faq-item').forEach(item=>{
+  const q = item.querySelector('.faq-q');
+  const a = item.querySelector('.faq-a');
+  if(item.classList.contains('open')) a.style.maxHeight = a.scrollHeight + 'px';
+  q.addEventListener('click', ()=>{
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(o=>{
+      o.classList.remove('open');
+      o.querySelector('.faq-a').style.maxHeight = null;
+    });
+    if(!isOpen){
+      item.classList.add('open');
+      a.style.maxHeight = a.scrollHeight + 'px';
+    }
+  });
+});
+
+/* ============ SHOWCASE VISUAL SWAP ============ */
+const showcaseVisual = document.getElementById('showcaseVisual');
+const visuals = {
+  drill: `<svg width="180" height="220" viewBox="0 0 180 220" fill="none"><rect x="80" y="10" width="20" height="140" fill="#2563EB"/><rect x="60" y="150" width="60" height="16" rx="4" fill="#4F46E5"/><path d="M90 166v40" stroke="#06B6D4" stroke-width="4" stroke-linecap="round"/><ellipse cx="90" cy="210" rx="50" ry="8" fill="#EEF4FF"/><circle cx="90" cy="30" r="14" fill="#06B6D4"/></svg>`,
+  cube: `<svg width="200" height="200" viewBox="0 0 200 200" fill="none"><path d="M60 60l70-25 70 25-70 25z" fill="#DCEBFF" stroke="#2563EB" stroke-width="1.5"/><path d="M60 60v80l70 25V85z" fill="#EEF4FF" stroke="#2563EB" stroke-width="1.5"/><path d="M200 60v80l-70 25V85z" fill="#C7D9FF" stroke="#2563EB" stroke-width="1.5"/><path d="M130 20v20" stroke="#4F46E5" stroke-width="4" stroke-linecap="round"/><path d="M118 15h24" stroke="#4F46E5" stroke-width="4" stroke-linecap="round"/></svg>`,
+  chart: `<svg width="220" height="180" viewBox="0 0 220 180" fill="none"><path d="M10 160 L60 100 L100 130 L150 40 L210 20" stroke="#06B6D4" stroke-width="3" stroke-linecap="round"/><circle cx="150" cy="40" r="6" fill="#4F46E5"/><circle cx="60" cy="100" r="6" fill="#2563EB"/><path d="M10 170h200" stroke="#CBD5E1" stroke-width="1.5"/></svg>`,
+  doc: `<svg width="150" height="200" viewBox="0 0 150 200" fill="none"><rect x="10" y="10" width="130" height="180" rx="10" fill="#fff" stroke="#2563EB" stroke-width="1.5"/><path d="M30 50h90M30 70h90M30 90h60" stroke="#CBD5E1" stroke-width="4" stroke-linecap="round"/><circle cx="105" cy="150" r="24" fill="#EEF4FF" stroke="#06B6D4" stroke-width="2"/><path d="M95 150l7 7 14-14" stroke="#059669" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>`
+};
+showcaseVisual.innerHTML = visuals.drill;
+const showSteps = document.querySelectorAll('.showcase-step');
+const sIO = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const key = e.target.dataset.visual;
+      showcaseVisual.style.opacity = 0;
+      setTimeout(()=>{ showcaseVisual.innerHTML = visuals[key]; showcaseVisual.style.opacity = 1; }, 200);
+    }
+  });
+}, {threshold:0.5});
+showSteps.forEach(s=>sIO.observe(s));
+showcaseVisual.style.transition = 'opacity .3s ease';
+</script>
+</body>
+</html>
